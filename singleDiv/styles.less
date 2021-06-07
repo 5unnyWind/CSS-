@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+// 红色 #D24D57 绿色 #26A65B 橙色 #EB7347 黑色 #2C3E50 暗绿色 #84AF9B 橙红色 #FC9D99 草绿色 #AEDD81 蓝色 #00CCFF 灰色 #D0D0D0
+@bgcolor:#2C3E50;
+
+body{
+    background-color:  @bgcolor;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    div{
+        margin-top: 50px;
+    }
+
+    .heart{
+        height: 140px;
+        width: 140px;
+        background-color: pink;
+        position: relative;
+        transform: rotate(45deg);
+        &::after,
+        &::before{
+            content: '';
+            width: 140px;
+            height: 140px;
+            position: absolute;
+            left: -70px;
+            border-radius: 50%;
+            background-color: pink;
+        }
+        &::before{
+            left: 0;
+            top: -70px;            
+        }
+    }
+
+
+    .TaiChi{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-image: 
+        radial-gradient(#000 12.5px,transparent 12.5px),
+        radial-gradient(#fff 12.5px,transparent 12.5px),
+        radial-gradient(#fff 50px,transparent 50px),
+        radial-gradient(#000 50px,transparent 50px),
+        linear-gradient(90deg,#000 100px,#fff 100px)
+        ;
+        background-position: center 50px,center -50px,center 50px,center -50px,0 0;
+    }
+
+
+}
