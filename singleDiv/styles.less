@@ -1,9 +1,12 @@
+@bgcolor:#2C3E50;
+// @randomLeft:`Math.random()*80`;
+
+
 *{
     margin: 0;
     padding: 0;
 }
 // 红色 #D24D57 绿色 #26A65B 橙色 #EB7347 黑色 #2C3E50 暗绿色 #84AF9B 橙红色 #FC9D99 草绿色 #AEDD81 蓝色 #00CCFF 灰色 #D0D0D0
-@bgcolor:#2C3E50;
 
 body{
     background-color:  @bgcolor;
@@ -11,34 +14,34 @@ body{
 .box{
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
     align-items: center;
 
-    div{
-        margin-top: 50px;
-    }
+    // div{
+    //     margin-top: 100px;
+    // }
+
 
     .heart{
-        height: 140px;
-        width: 140px;
+        margin-top: 50px;
+        
+        height: 70px;
+        width: 70px;
         background-color: pink;
         position: relative;
         transform: rotate(45deg);
         &::after,
         &::before{
             content: '';
-            width: 140px;
-            height: 140px;
+            width: 70px;
+            height: 70px;
             position: absolute;
-            left: -70px;
+            left: -35px;
             border-radius: 50%;
             background-color: pink;
         }
         &::before{
             left: 0;
-            top: -70px;            
+            top: -35px;            
         }
     }
 
@@ -55,7 +58,68 @@ body{
         linear-gradient(90deg,#000 100px,#fff 100px)
         ;
         background-position: center 50px,center -50px,center 50px,center -50px,0 0;
+        transform: scale(.5);
     }
+
+
+    .cloud{
+        // 
+        margin-left: -40px;
+        // 
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 
+        #fff 30px -50px 0  -10px,
+        #fff 30px  30px 0 -10px,
+        #fff 90px -20px 0   -5px,
+        #fff 80px  20px 0   -10px,
+        #fff 125px 10px 0 -10px ;
+        transform: scale(.5);
+    }
+    .rain{
+        // 
+        margin-left: 20px;
+        margin-top: -60px;
+        // 
+        width: 3px;
+        height: 6px;
+        border-radius: 50%;
+        animation: rainy_rain 1s infinite linear;
+        box-shadow: rgba(0, 0, 0, 0) -10px 30px, rgba(0, 0, 0, 0) 40px 40px,
+                rgba(0, 0, 0, 0) -50px 75px, rgba(0, 0, 0, 0) 55px 50px,
+                rgba(0, 0, 0, 0) -18px 100px, rgba(0, 0, 0, 0) 12px 95px,
+                rgba(0, 0, 0, 0) -31px 45px, rgba(0, 0, 0, 0) 30px 35px;
+    }
+    @keyframes rainy_rain {
+        0% {
+            box-shadow: 
+                rgba(0, 0, 0, 0) -10px 30px, rgba(0, 0, 0, 0) 40px 40px,
+                rgba(0, 0, 0, 0) -50px 75px, rgba(0, 0, 0, 0) 55px 20px,
+                rgba(0, 0, 0, 0) -18px 10px, rgba(0, 0, 0, 0) 12px 35px,
+                rgba(0, 0, 0, 0) -31px 45px, rgba(0, 0, 0, 0) 30px 35px;
+        }
+        // 省略部分阴影位移帧动画代码
+        50%{
+            box-shadow: 
+                rgba(0, 0, 0, 0.3) -10px 65px, rgba(0, 0, 0, 0.3) 40px 80px,
+                rgba(0, 0, 0, 0.3) -50px 110px, rgba(0, 0, 0, 0.3) 55px 70px,
+                rgba(0, 0, 0, 0) -18px 100px, rgba(0, 0, 0, 0.3) 12px 80px,
+                rgba(0, 0, 0, 0.3) -31px 75px, rgba(0, 0, 0, 0.3) 30px 140px;
+ ;
+        }
+
+    
+        100% {
+            box-shadow: 
+                rgba(0, 0, 0, 0) -10px 100px, rgba(0, 0, 0, 0) 40px 120px,
+                rgba(0, 0, 0, 0) -50px 110px, rgba(0, 0, 0, 0) 55px 120px,
+                rgba(0, 0, 0, 0) -18px 100px, rgba(0, 0, 0, 0) 12px 125px,
+                rgba(0, 0, 0, 0) -31px 105px, rgba(0, 0, 0, 0) 30px 120px;
+        }
+    }
+
 
 
 }
