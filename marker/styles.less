@@ -1,0 +1,16 @@
+h1,h2{
+    display: list-item;
+    // 不知为何无效
+    &::marker{
+        content: '▍';
+    }
+}
+li::marker{
+    content: '😅';
+    
+}
+li:nth-child(1)::marker{
+    content: '▍';
+    color: aqua;
+}
+
