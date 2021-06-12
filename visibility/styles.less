@@ -1,0 +1,9 @@
+// content-visibility可以接受visible、auto和hidden三个属性值，
+// 但我们可以在一个元素上使用content-visibility:auto来直接的提升页面的渲染性能。
+// 如果你有大量的离屏内容（Off-screen Content），这将会大幅减少页面渲染时间。
+// Web动画（在动的元素）是和其他元素一起定期渲染的，以往在动画开发时，会使用CSS的3D变换（transform中的translate3d()或translateZ()）来开启GPU加速，让动画变得更流畅，但这样做是一种黑魔法，会将元素和它的上下文提到另一个“层”，独立于其他元素被渲染。可这种将元素提取到一个新层，相对来说代价也是昂贵的，这可能会使transform动画延迟几百毫秒。
+
+
+
+
+
